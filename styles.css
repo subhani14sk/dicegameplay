@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ecf0f1; /* Background color for the page */
+}
+
+.dice-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.player {
+    text-align: center;
+}
+
+.dice {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #3498db;
+    margin: 10px;
+    position: relative;
+    perspective: 1000px;
+    background: linear-gradient(to right top, #3498db, #5dade2, #86b8eb, #aecfe3, #d6e7e8, #ffffff);
+}
+
+.dice::before, .dice::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    border: 0px solid #3498db;
+}
+
+.dice .dot-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dice .dot {
+    width: 20px;
+    height: 20px;
+    background-color: #100403; /* Red dots */
+    border-radius: 50%;
+    margin: 4px;
+}
+
+#dice2 {
+    background: linear-gradient(to right top, #e74c3c, #ec7063, #f1948a, #f5b7b1, #f8c9ca, #ffffff);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db; /* Button color */
+    color: #ffffff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+}
+
+#winner {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Animation for rolling the dice */
+@keyframes roll {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.roll-animation {
+    animation: roll 1s ease-out;
+}
